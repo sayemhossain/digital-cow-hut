@@ -1,0 +1,30 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": ["prettier", "eslint-comments", "@typescript-eslint"],
+  // "plugins": ["@typescript-eslint"],
+  // HERE
+  "extends": [
+    "airbnb-base/legacy",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "no-console": "off",
+    "spaced-comment": "off",
+    "radix": "off",
+    "eslint-comments/no-unused-disable": "error",
+    "eslint-comments/disable-enable-pair": "error"
+  },
+
+  "env": {
+    "browser": true,
+    "es2021": true
+  }
+}
