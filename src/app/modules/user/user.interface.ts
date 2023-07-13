@@ -13,7 +13,10 @@ export type IUser = {
   address?: string;
   budget: number;
   income: number;
-  buyer: string;
-  seller: string;
 };
 export type UserModel = Model<IUser, Record<string, unknown>>;
+
+export type IUsersFilters = {
+  searchTerm?: string;
+  budget?: string;
+};
