@@ -3,12 +3,12 @@ import { IUser } from '../user/user.interface';
 
 export type ICow = {
   name: string;
-  age: string;
+  age: number;
   price: number;
   location: string;
   breed: string;
   weight: number;
-  lebel: string;
+  label: string;
   category: string;
   seller: Types.ObjectId | IUser;
 };

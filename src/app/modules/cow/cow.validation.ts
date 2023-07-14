@@ -5,10 +5,10 @@ export const createCowZodSchema = z.object({
     name: z.string({
       required_error: 'Name is required',
     }),
-    age: z.string({
+    age: z.number({
       required_error: 'Age is required',
     }),
-    price: z.string({
+    price: z.number({
       required_error: 'Price is required',
     }),
     location: z.string({
@@ -20,8 +20,8 @@ export const createCowZodSchema = z.object({
     weight: z.number({
       required_error: 'Weight is required',
     }),
-    lebel: z.string({
-      required_error: 'Lebel is required',
+    label: z.string({
+      required_error: 'Label is required',
     }),
     category: z.string({
       required_error: 'Category is required',
@@ -39,7 +39,7 @@ export const updateCowZodSchema = z.object({
       })
       .optional(),
     age: z
-      .string({
+      .number({
         required_error: 'Age is required',
       })
       .optional(),

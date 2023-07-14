@@ -7,7 +7,7 @@ const cowSchema = new Schema<ICow>({
     required: [true, 'Name is required.'],
   },
   age: {
-    type: String,
+    type: Number,
     required: [true, 'Age is required.'],
   },
   price: {
@@ -26,9 +26,9 @@ const cowSchema = new Schema<ICow>({
     type: Number,
     required: [true, 'Weight is required.'],
   },
-  lebel: {
+  label: {
     type: String,
-    required: [true, 'Lebel is required.'],
+    required: [true, 'Label is required.'],
   },
   category: {
     type: String,
