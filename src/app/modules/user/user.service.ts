@@ -60,7 +60,7 @@ export const getAllUserToDB = async (
     .skip(skip)
     .limit(limit);
 
-  const total = await User.countDocuments();
+  const total = await User.countDocuments(whereCondition);
 
   return {
     meta: {

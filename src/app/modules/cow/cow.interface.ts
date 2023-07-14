@@ -13,3 +13,12 @@ export type ICow = {
   seller: Types.ObjectId | IUser;
 };
 export type CowModel = Model<ICow, Record<string, unknown>>;
+
+export type ICowFilters = {
+  query?: string;
+  location?: string;
+  breed?: string;
+  category?: string;
+  minPrice?: number;
+  maxPrice?: number;
+};
