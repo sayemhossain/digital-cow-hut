@@ -23,7 +23,7 @@ export const createCowToDB = async (payload: ICow) => {
   return result;
 };
 export const getSingleCowToDB = async (id: String): Promise<ICow | null> => {
-  const result = await Cow.findById({ _id: id });
+  const result = await Cow.findById({ _id: id }).populate('seller');
   return result;
 };
 export const getAllCowToDB = async (
@@ -74,6 +74,7 @@ export const getAllCowToDB = async (
   }
 
   const result = await Cow.find(whereCondition)
+    .populate('seller')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
@@ -89,7 +90,17 @@ export const getAllCowToDB = async (
     data: result,
   };
 };
+export const updateCowToDB = async (id: string, payload: Partial<ICow>) => {
+  const isExist = await Cow.findById({ _id: id });
+  if (!isExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Cow not found');
+  }
+  const result = await Cow.findByIdAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+  return result;
+};
 export const deleteCowToDB = async (id: string) => {
-  const result = await Cow.findByIdAndDelete({ _id: id });
+  const result = await Cow.findByIdAndDelete({ _id: id }).populate('seller');
   return result;
 };

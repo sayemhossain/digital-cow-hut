@@ -36,8 +36,8 @@ const cowSchema = new Schema<ICow>({
   },
   seller: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: [true, 'Seller is required.'],
   },
 });
-export const Cow = model<ICow, CowModel>('Cow', cowSchema);
+export const Cow = model<ICow, CowModel>('cow', cowSchema);

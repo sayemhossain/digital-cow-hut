@@ -11,6 +11,7 @@ import {
   deleteCowToDB,
   getAllCowToDB,
   getSingleCowToDB,
+  updateCowToDB,
 } from './cow.service';
 
 export const createCow = catchAsync(async (req: Request, res: Response) => {
@@ -48,6 +49,19 @@ export const getAllCow = catchAsync(async (req: Request, res: Response) => {
     message: 'Users retrieved successfully !',
     meta: result.meta,
     data: result.data,
+  });
+});
+export const updateCow = catchAsync(async (req: Request, res: Response) => {
+  const updatedData = req.body;
+  const { id } = req.params;
+
+  const result = await updateCowToDB(id, updatedData);
+
+  sendResponse<ICow>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User updated successfully !',
+    data: result,
   });
 });
 export const deleteCow = catchAsync(async (req: Request, res: Response) => {
