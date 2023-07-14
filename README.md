@@ -24,7 +24,7 @@ Live Link: [https://example.com](https://example.com)
 
 - `GET` /api/v1/cows?pag=1&limit=10
 - `GET` /api/v1/cows?sortBy=price&sortOrder=asc
-- `GET` /api/v1/cows?minPrice=20000&maxPrice=70000
+- `GET` /api/v1/cows?minPrice=1000&maxPrice=5000
 - `GET` /api/v1/cows?location=Chattogram
 - `GET` /api/v1/cows?query=Cha
 
